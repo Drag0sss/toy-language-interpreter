@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="841.0" stylesheets="style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.gui.MainWindowController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="842.0" snapToPixel="false" spacing="20.0">
+         <children>
+            <Label text="Number of program states:" />
+            <TextField fx:id="nrPrgStatesField" editable="false" />
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="83.0" prefWidth="842.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="runOneStepButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleRunOneStep" text="Run one step" />
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane fx:id="leftZone" maxWidth="1.7976931348623157E308" prefHeight="440.0" prefWidth="0.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+              <tabs>
+                <Tab closable="false" text="Heap">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="heapTable" prefHeight="372.0" prefWidth="388.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="heapAddressColumn" prefWidth="194.4000152349472" resizable="false" text="Address" />
+                                  <TableColumn fx:id="heapValueColumn" minWidth="0.0" prefWidth="191.19998168945312" resizable="false" text="Value" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab closable="false" text="Out">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="411.0" prefWidth="644.0">
+                           <children>
+                              <ListView fx:id="outListView" layoutX="112.0" layoutY="14.0" prefHeight="422.0" prefWidth="126.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+      
+                  <Tab closable="false" text="File Table">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="411.0" prefWidth="644.0">
+                              <children>
+                              <ListView fx:id="fileTableView" layoutX="86.0" layoutY="139.0" prefHeight="420.0" prefWidth="129.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              </children>
+                        </AnchorPane>
+                      </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <VBox fx:id="rightZone" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="401.0" prefWidth="79.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Program States" VBox.vgrow="NEVER" />
+                  <ListView fx:id="prgStateIdsListView" minHeight="0.0" prefHeight="0.0" prefWidth="427.0" VBox.vgrow="ALWAYS" />
+                  <Label text="Symbol Table" VBox.vgrow="NEVER" />
+                  <TableView fx:id="symTable" prefHeight="10.0" prefWidth="460.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="symVarColumn" minWidth="0.0" prefWidth="190.40002745389938" resizable="false" text="Variable" />
+                      <TableColumn fx:id="symValueColumn" minWidth="0.0" prefWidth="243.19993591308594" resizable="false" text="Value" />
+                    </columns>
+                  </TableView>
+                  <Label text="Execution Stack" VBox.vgrow="NEVER" />
+                  <ListView fx:id="exeStackListView" minHeight="0.0" prefHeight="139.0" prefWidth="460.0" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </center>
+</BorderPane>

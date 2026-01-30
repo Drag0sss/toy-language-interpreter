@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="selectionContainer" prefHeight="565.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.gui.SelectProgramController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="54.0" layoutY="120.0" prefHeight="402.0" prefWidth="764.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+         <children>
+            <ListView fx:id="programList" prefHeight="414.0" prefWidth="764.0" />
+            <Button fx:id="selectButton" mnemonicParsing="false" onAction="#handleSelect" text="Select" />
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="134.0" prefWidth="807.0" spacing="10.0" AnchorPane.bottomAnchor="430.6" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="711.0" styleClass="main-app-title" text="toy Language Interpreter" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="848.0" styleClass="selection-title" text="Select a program" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
